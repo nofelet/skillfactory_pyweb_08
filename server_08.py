@@ -4,7 +4,7 @@ from random import random, randrange
 from bottle import route, run, static_file, view
 from horoscope import generate_prophecies
 
-cwd = os.getcwd() + os.sep + 'views' + os.sep + 'home.tpl'
+cwd = os.getcwd() + os.sep + 'views' + os.sep + 'static_predictions_08.tpl'
 @route("/")
 @view(cwd)
 def index():
