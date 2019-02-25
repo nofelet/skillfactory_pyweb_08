@@ -6,7 +6,7 @@
       rel="stylesheet"
       href="/css/bootstrap.min.css"
     >
-    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-3.3.1-min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -18,29 +18,32 @@
 
       <div class="row">
         <div class="col" id="p-0">
-          p-0
+          {{ predictions[0] }}
         </div>
         <div class="col" id="p-1">
-          p-1
+          {{ predictions[1] }}
         </div>
         <div class="col" id="p-2">
-          p-2
+          {{ predictions[2] }}
         </div>
       </div>
 
       <div class="row">
         <div class="col" id="p-3">
-          p-3
+          {{ predictions[3] }}
         </div>
         <div class="col" id="p-4">
-          p-4
+          {{ predictions[4] }}
         </div>
         <div class="col" id="p-5">
-          p-5
+          {{ predictions[5] }}
         </div>
       </div>
     </div>
   </body>
+    
+    <!--
+    
   <script language="javascript">
     console.log( {{ x }} );
 
@@ -62,7 +65,11 @@
     }
     console.log("Before clicking")
 
-    var par = $.getJSON("localhost:8080/api/forecasts")[prophecies];
+    //var par = $.getJSON("localhost:8080/api/forecasts")[prophecies];
+      var par = decodeURI({{ predictions }});
     $("h1").click(set_content_in_divs());
-  </script>
+  </script> 
+
+-->
+
 </html>
