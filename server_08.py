@@ -16,7 +16,7 @@ def index():
 
   return {
     "date": f"{now.year}-{now.month}-{now.day}",
-    #"predictions": generate_prophecies(6, 2),#[
+    "predictions": generate_prophecies(6, 2),#[
     #   "После обеда ожидайте неожиданного праздника.",
     #   "Днем остерегайтесь неожиданного праздника.",
     #   "Утром ожидайте гостей из забытого прошлого.",
@@ -29,21 +29,25 @@ def index():
 def send_css(filename):
     return static_file(filename, root='static/css')
 
+@route('/js/<filename>')
+def send_js(filename):
+	return static_file(filename, root='static/js')
+
 @route("/api/test")
 def api_test():
     return {"test_passed": True}
 
-# @route("/api/forecasts")
-# def api_forecasts():
-# 	now = dt.now()
-# 	x = random()
-# 	special_date = x > 0.5
-# 	return {
-# 	"date": f"{now.year}-{now.month}-{now.day}",
-# 	"prophecies": generate_prophecies(6, 2),
-# 	"special_date": special_date,
-# 	"x": x,
-# 	}
+#@route("/api/forecasts")
+#def api_forecasts():
+#	now = dt.now()
+#	x = random()
+#	special_date = x > 0.5
+#	return {
+#	"date": f"{now.year}-{now.month}-{now.day}",
+#	"prophecies": generate_prophecies(6, 2),
+#	"special_date": special_date,
+#	"x": x,
+#	}
 
 run(
   host="localhost",
